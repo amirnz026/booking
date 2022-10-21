@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Colors */
+/* #8D8741 #659DBD #DAAD86 #BC986A #FBEEC1 */
+
+body {
+  font-family: Shabnam, sans-serif;
+}
