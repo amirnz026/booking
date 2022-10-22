@@ -6,29 +6,24 @@ const SearchItem = () => {
     <div className="searchItem">
       <img src={image01} alt="" className="siImg" />
       <div className="siDesc">
-        <h1 className="siTitle">Tower Street Apartments</h1>
-        <span className="siDistance">500m from center</span>
-        <span className="siTaxiOp">Free airport taxi</span>
-        <span className="siSubtitle">
-          Studio Apartment with Air conditioning
-        </span>
+        <h1 className="siTitle">آپارتمان یک خوابه آذربایجان ۵</h1>
+        <span className="siDistance">۷۵۰ متر بنا</span>
+        <span className="siTaxiOp">تاکسی رایگان از فرودگاه</span>
+        <span className="siSubtitle">اتاقک کوچه همراه با تسویه هوا</span>
         <span className="siFeatures">
-          Entire studio . 1 bathroom . 21m2 1 full bed
+          کل اتاق، 1 سرویس بهداشتی، 2 اتاق خواب
         </span>
-        <span className="siCancelOp">Free cancellation</span>
-        <span className="siCancelOpSubtitle">
-          You can cancel later, so lock in this great price today!
-        </span>
+        <span className="siCancelOp">لغو رایگان</span>
       </div>
       <div className="siDetails">
         <div className="siRating">
-          <span>Excellent</span>
-          <button>8.9</button>
+          <span>عملکرد عالی</span>
+          <button>۸.۹</button>
         </div>
         <div className="siDetailTexts">
-          <span className="siPrice">$123</span>
-          <span className="siTaxOp">Includes taxes and fees</span>
-          <button className="siCheckButton">See availability</button>
+          <span className="siPrice">شبی ۲,۰۰۰,۰۰۰ تومان</span>
+          <span className="siTaxOp">به همراه مالیات</span>
+          <button className="siCheckButton">بررسی موجود بودن</button>
         </div>
       </div>
     </div>

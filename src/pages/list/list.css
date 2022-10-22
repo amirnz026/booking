@@ -1,3 +1,13 @@
+/* Bright Red: #DE354C
+
+Deep Red: #932432
+
+Pure Purple: #3C1874
+
+Purple Tinged Grey: #283747
+
+Cloud: #F3F3F3 */
+
 .listContainer {
   display: flex;
   justify-content: center;
@@ -13,7 +23,7 @@
 
 .listSearch {
   flex: 1;
-  background-color: #febb02;
+  background-color: #f3f3f3;
   padding: 10px;
   border-radius: 10px;
   position: sticky;
@@ -42,7 +52,10 @@
   height: 30px;
   border: none;
   padding: 5px;
+  border-radius: 10px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
+
 .lsItem > span {
   height: 30px;
   padding: 5px;
@@ -50,6 +63,7 @@
   display: flex;
   align-items: center;
   cursor: pointer;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
 .lsOptions {
@@ -66,18 +80,35 @@
 
 .lsOptionInput {
   width: 50px;
+  border-radius: 3px;
+  padding: 3px 0;
 }
 
 .listSearch > button {
   padding: 10px;
-  background-color: #0071c2;
+  background-color: #de354c;
   color: white;
   border: none;
   width: 100%;
   font-weight: 500;
   cursor: pointer;
+  border-radius: 10px;
 }
 
 .listResult {
   flex: 3;
+}
+
+@media only screen and (max-width: 1024px) {
+  .listWrapper {
+    flex-direction: column;
+  }
+  .lsOptions {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+  .listSearch {
+    position: static;
+  }
 }

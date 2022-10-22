@@ -1,7 +1,17 @@
+/* Bright Red: #DE354C
+
+Deep Red: #932432
+
+Pure Purple: #3C1874
+
+Purple Tinged Grey: #283747
+
+Cloud: #F3F3F3 */
+
 .mail {
   width: 100%;
   margin-top: 50px;
-  background-color: #003580;
+  background-color: #3c1874;
   color: white;
   display: flex;
   flex-direction: column;
@@ -20,11 +30,31 @@
 }
 
 .mailInputContainer > button {
+  width: 100px;
   height: 50px;
-  background-color: #0071c2;
+  margin-right: 10px;
+  background-color: #de354c;
   color: white;
   font-weight: 500;
   border: none;
   border-radius: 5px;
   cursor: pointer;
+}
+
+@media only screen and (max-width: 1024px) {
+  .mail {
+    text-align: center;
+  }
+  .mailInputContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .mailInputContainer > button {
+    width: 100px;
+    margin-top: 20px;
+    margin-right: 10px;
+  }
 }

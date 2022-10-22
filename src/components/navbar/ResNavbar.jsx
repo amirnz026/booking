@@ -29,7 +29,7 @@ const ResponsiveNavbar = () => {
             <ul className="links shadow-2xl">
               <li>
                 <div className="flex items-center">
-                  <AiOutlineLogin className="text-[#6200EE] font-bold" />
+                  <AiOutlineLogin className="text-[#DE354C] font-bold" />
                   <a href="#">
                     <p className="text-base">ورود | ثبت نام</p>
                   </a>
@@ -37,7 +37,7 @@ const ResponsiveNavbar = () => {
               </li>
               <li>
                 <div className="flex items-center">
-                  <BiBed className="text-[#6200EE] font-bold" />
+                  <BiBed className="text-[#DE354C] font-bold" />
                   <a href="#">
                     <p className="text-base">اقامت</p>
                   </a>
@@ -46,7 +46,7 @@ const ResponsiveNavbar = () => {
 
               <li>
                 <div className="flex items-center">
-                  <MdFlight className="text-[#6200EE] font-bold" />
+                  <MdFlight className="text-[#DE354C] font-bold" />
                   <a href="#">
                     <p className="text-base">پروازها</p>
                   </a>
@@ -54,7 +54,7 @@ const ResponsiveNavbar = () => {
               </li>
               <li>
                 <div className="flex items-center">
-                  <MdOutlineWbSunny className="text-[#6200EE] font-bold" />
+                  <MdOutlineWbSunny className="text-[#DE354C] font-bold" />
                   <a href="#">
                     <p className="text-base">جاذبه ها</p>
                   </a>
@@ -62,7 +62,7 @@ const ResponsiveNavbar = () => {
               </li>
               <li>
                 <div className="flex items-center">
-                  <AiOutlineQuestionCircle className="text-[#6200EE] font-bold" />
+                  <AiOutlineQuestionCircle className="text-[#DE354C] font-bold" />
                   <a href="#">
                     <p className="text-base">سوالی دارید؟</p>
                   </a>

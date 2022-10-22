@@ -14,6 +14,7 @@ import image03 from "../../images/image-03.webp";
 import MailList from "../../components/mailList/MailList";
 import Footer from "../../components/footer/Footer";
 import { useState } from "react";
+import ResNavbar from "../../components/navbar/ResNavbar";
 
 const photos = [
   { src: image01 },
@@ -44,7 +45,14 @@ const Hotel = () => {
   };
   return (
     <div>
-      <Navbar />
+      <div className="hidden md:block">
+        <Navbar />
+      </div>
+
+      <div className="block md:hidden">
+        <ResNavbar />
+      </div>
+
       <Header type="list" />
       <div className="hotelContainer">
         {open && (
@@ -55,7 +63,7 @@ const Hotel = () => {
               onClick={() => setOpen(false)}
             />
             <FontAwesomeIcon
-              icon={faCircleArrowLeft}
+              icon={faCircleArrowRight}
               className="arrow"
               onClick={() => handleMove("l")}
             />
@@ -63,24 +71,25 @@ const Hotel = () => {
               <img src={photos[slideNumber].src} alt="" className="sliderImg" />
             </div>
             <FontAwesomeIcon
-              icon={faCircleArrowRight}
+              icon={faCircleArrowLeft}
               className="arrow"
               onClick={() => handleMove("r")}
             />
           </div>
         )}
         <div className="hotelWrapper">
-          <button className="bookNow">Reserve or Book Now!</button>
-          <h1 className="hotelTitle">Grand Hotel</h1>
+          <button className="bookNow">همین الان رزرو کن!</button>
+          <h1 className="hotelTitle">هتل مجلل</h1>
           <div className="hotelAddress">
             <FontAwesomeIcon icon={faLocationDot} />
-            <span>Elton St 125 New york</span>
+            <span>۱۰ کیلومتری اصفهان</span>
           </div>
           <span className="hotelDistance">
-            Excellent location - 500m from center
+            موقعیت عالی، ۱۰ کیلومتر تا مرکز شهر
           </span>
           <span className="hotelPriceHighLight">
-            Book a stay over $114 at this property and get a free airport taxi
+            همین الان این مکان را با قیمت ۱,۰۰۰,۰۰۰ رزرو کنید و بلیت رایگان
+            تاکسی دریافت کنید!
           </span>
           <div className="hotelImages">
             {photos.map((photo, i) => (
@@ -96,27 +105,31 @@ const Hotel = () => {
           </div>
           <div className="hotelDetails">
             <div className="hotelDetailsTexts">
-              <h1 className="hotelTitle">Stay in the heart of Krakow</h1>
+              <h1 className="hotelTitle">مرکز قلب سنت ایران</h1>
               <p className="hotelDesc">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Nostrum, sed. Qui, explicabo. Non culpa pariatur suscipit minima
-                possimus incidunt eaque quo quam quibusdam, adipisci eum cumque
-                architecto modi. Impedit, pariatur?Lorem ipsum, dolor sit amet
-                consectetur adipisicing elit. In debitis nobis doloremque ipsum
-                modi? Totam soluta omnis accusantium in. In esse blanditiis
-                delectus neque natus nobis impedit tempore rerum? Ipsum.
+                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
+                استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله
+                در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد
+                نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد.
+                کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان
+                جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را
+                برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در
+                زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و
+                دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد و
+                زمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات
+                پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.
               </p>
             </div>
             <div className="hotelDetailsPrice">
-              <h1>Perfect for a 9-night stay!</h1>
+              <h1>عالی برای یک افامت 9 شبه!</h1>
               <span>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Voluptatum consequuntur nihil nobis!
+                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
+                استفاده از طراحان گرافیک است.
               </span>
               <h2>
-                <b>$945</b> (9 nights)
+                <b>۹ میلیون تومان</b> (۹ شب)
               </h2>
-              <button>Reserve or Book Now!</button>
+              <button>همین الان رزرو کن!</button>
             </div>
           </div>
         </div>

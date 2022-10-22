@@ -4,10 +4,10 @@ const Navbar = () => {
   return (
     <div className="navbar">
       <div className="navContainer">
-        <span className="logo">lamabooking</span>
+        <span className="logo">رزروفا</span>
         <div className="navItem">
-          <button className="navButton">Register</button>
-          <button className="navButton">Login</button>
+          <button className="navButton">ثبت نام</button>
+          <button className="navButton">ورود</button>
         </div>
       </div>
     </div>

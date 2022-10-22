@@ -9,22 +9,36 @@ const Featured = () => {
       <div className="featuredItem">
         <img src={image01} alt="" className="featuredImg" />
         <div className="featuredTitles">
-          <h1>Dublin</h1>
-          <h2>123 properties</h2>
+          <h1>رامسر</h1>
+          <h2>۳۰۸ اقامتگاه</h2>
         </div>
       </div>
       <div className="featuredItem">
         <img src={image02} alt="" className="featuredImg" />
         <div className="featuredTitles">
-          <h1>Austin</h1>
-          <h2>532 properties</h2>
+          <h1>بندر انزلی</h1>
+          <h2>۵۳۲ اقامتگاه</h2>
         </div>
       </div>
       <div className="featuredItem">
         <img src={image03} alt="" className="featuredImg" />
         <div className="featuredTitles">
-          <h1>Reno</h1>
-          <h2>533 properties</h2>
+          <h1>ماسال</h1>
+          <h2>۵۳۳ اقامتگاه</h2>
+        </div>
+      </div>
+      <div className="featuredItem">
+        <img src={image02} alt="" className="featuredImg" />
+        <div className="featuredTitles">
+          <h1>بندر انزلی</h1>
+          <h2>۵۳۲ اقامتگاه</h2>
+        </div>
+      </div>
+      <div className="featuredItem">
+        <img src={image01} alt="" className="featuredImg" />
+        <div className="featuredTitles">
+          <h1>رامسر</h1>
+          <h2>۳۰۸ اقامتگاه</h2>
         </div>
       </div>
     </div>

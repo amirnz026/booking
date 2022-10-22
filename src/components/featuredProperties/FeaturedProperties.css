@@ -1,8 +1,19 @@
+/* Bright Red: #DE354C
+
+Deep Red: #932432
+
+Pure Purple: #3C1874
+
+Purple Tinged Grey: #283747
+
+Cloud: #F3F3F3 */
+
 .fp {
-  width: 100%;
-  max-width: 1024px;
+  max-width: 1440px;
+
   display: flex;
   justify-content: space-between;
+  overflow-x: scroll;
   gap: 20px;
 }
 
@@ -14,11 +25,15 @@
 }
 
 .fpImg {
+  border-radius: 10px;
+
   width: 100%;
 }
 
 .fpName {
   font-weight: bold;
+  width: 170px;
+  overflow: hidden;
 }
 
 .fpCity {
@@ -30,14 +45,27 @@
 }
 
 .fpRating > button {
-  background-color: #003580;
-  color: white;
+  background-color: #de354c;
+  color: #f3f3f3;
   border: none;
   padding: 3px;
   margin-right: 10px;
   font-weight: bold;
+  border-radius: 5px;
 }
 
 .fpRating > span {
   font-size: 14px;
+  margin-right: 8px;
+}
+
+@media only screen and (max-width: 1024px) {
+  .fp {
+    overflow: auto;
+    white-space: nowrap;
+    width: 95%;
+  }
+  .fpItem {
+    word-wrap: break-word;
+  }
 }

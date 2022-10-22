@@ -5,6 +5,7 @@ import { useLocation } from "react-router-dom";
 import { useState } from "react";
 import { format } from "date-fns";
 import { DateRange } from "react-date-range";
+import ResNavbar from "../../components/navbar/ResNavbar";
 import SearchItem from "../../components/searchItem/SearchItem";
 
 const List = () => {
@@ -15,22 +16,28 @@ const List = () => {
   const [options, setOptions] = useState(location.state.options);
   return (
     <div>
-      <Navbar />
+      <div className="hidden md:block">
+        <Navbar />
+      </div>
+
+      <div className="block md:hidden">
+        <ResNavbar />
+      </div>
       <Header type="list" />
       <div className="listContainer">
         <div className="listWrapper">
           <div className="listSearch">
-            <h1 className="lsTitle">Search</h1>
+            <h1 className="lsTitle">جستجو</h1>
             <div className="lsItem">
-              <label>Destination</label>
+              <label>مقصد</label>
               <input type="text" placeholder={destination} />
             </div>
             <div className="lsItem">
-              <label>Check-in Date</label>
+              <label>بازه زمانی</label>
               <span onClick={() => setOpenDate(!openDate)}>{`${format(
                 date[0].startDate,
                 "MM/dd/yyyy"
-              )} to ${format(date[0].endDate, "MM/dd/yyyy")} `}</span>
+              )} تا ${format(date[0].endDate, "MM/dd/yyyy")} `}</span>
               {openDate && (
                 <DateRange
                   onChange={(item) => setDate([item.selection])}
@@ -40,22 +47,22 @@ const List = () => {
               )}
             </div>
             <div className="lsItem">
-              <label>Options</label>
+              <label>فیلترها</label>
               <div className="lsOptions">
                 <div className="lsOptionItem">
                   <span className="lsOptionText">
-                    Min price <small>per night</small>
+                    حداقل قیمت <small>هر شب</small>
                   </span>
                   <input type="number" className="lsOptionInput" />
                 </div>
                 <div className="lsOptionItem">
                   <span className="lsOptionText">
-                    Max price <small>per night</small>
+                    حداکثر قیمت<small> هر شب</small>
                   </span>
                   <input type="number" className="lsOptionInput" />
                 </div>
                 <div className="lsOptionItem">
-                  <span className="lsOptionText">Adult</span>
+                  <span className="lsOptionText">بزرگسال</span>
                   <input
                     type="number"
                     min={1}
@@ -64,7 +71,7 @@ const List = () => {
                   />
                 </div>
                 <div className="lsOptionItem">
-                  <span className="lsOptionText">Children</span>
+                  <span className="lsOptionText">کودک</span>
                   <input
                     type="number"
                     min={0}
@@ -73,7 +80,7 @@ const List = () => {
                   />
                 </div>
                 <div className="lsOptionItem">
-                  <span className="lsOptionText">Room</span>
+                  <span className="lsOptionText">اتاق</span>
                   <input
                     type="number"
                     min={1}
@@ -83,7 +90,7 @@ const List = () => {
                 </div>
               </div>
             </div>
-            <button>Search</button>
+            <button>جستجو</button>
           </div>
           <div className="listResult">
             <SearchItem />

@@ -11,18 +11,24 @@ import ResNavbar from "../../components/navbar/ResNavbar";
 const Home = () => {
   return (
     <div>
-      {/* <ResNavbar /> */}
-      {/* <Navbar /> */}
+      <div className="hidden md:block">
+        <Navbar />
+      </div>
+
+      <div className="block md:hidden">
+        <ResNavbar />
+      </div>
       <Header />
-      {/* <div className="homeContainer">
+
+      <div className="homeContainer">
         <Featured />
-        <h1 className="homeTitle">Browse by property type</h1>
+        <h1 className="homeTitle">جستجو بر اساس نوع</h1>
         <PropertyList />
-        <h1 className="homeTitle">Homes guests love</h1>
+        <h1 className="homeTitle">اقامتگاه های محبوب</h1>
         <FeaturedProperties />
         <MailList />
         <Footer />
-      </div> */}
+      </div>
     </div>
   );
 };

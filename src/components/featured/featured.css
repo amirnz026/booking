@@ -1,6 +1,6 @@
 .featured {
   width: 100%;
-  max-width: 1024px;
+  max-width: 1440px;
   display: flex;
   justify-content: space-between;
   gap: 20px;
@@ -8,20 +8,39 @@
 }
 
 .featuredItem {
+  width: 250px;
   position: relative;
   color: white;
-  border-radius: 10px;
-  overflow: hidden;
   height: 250px;
 }
 
 .featuredImg {
   width: 100%;
   object-fit: cover;
+  border-radius: 10px;
 }
 
 .featuredTitles {
   position: absolute;
-  bottom: 20px;
-  left: 20px;
+  bottom: 25px;
+  right: 20px;
+  background-color: rgba(0, 0, 0, 0.541);
+  padding: 7px;
+  border-radius: 10px;
+  text-align: right;
+  line-height: 25px;
+}
+
+@media only screen and (max-width: 1024px) {
+  .featured {
+    display: block;
+    overflow: auto;
+    white-space: nowrap;
+    max-width: 95%;
+  }
+  .featuredItem {
+    display: inline-block;
+    text-align: center;
+    padding: 0 7px;
+  }
 }

@@ -52,39 +52,127 @@ const Header = ({ type }) => {
           type === "list" ? "headerContainer listMode" : "headerContainer"
         }
       >
+        {openDate && (
+          <div className="dateRangeContainer">
+            <DateRange
+              editableDateInputs={true}
+              onChange={(item) => setDate([item.selection])}
+              moveRangeOnFirstSelection={false}
+              ranges={date}
+              className="date"
+              minDate={new Date()}
+            />
+            <AiFillCloseCircle
+              className="closeBtn"
+              onClick={() => {
+                setOpenDate(false);
+              }}
+            />
+          </div>
+        )}
+
+        {openOptions && (
+          <div className="optionsWrapper">
+            <div className="options">
+              <div className="optionItem">
+                <span className="optionText">بزرگسال</span>
+                <div className="optionCounter">
+                  <button
+                    className="optionCounterButton"
+                    onClick={() => handleOption("adult", "i")}
+                  >
+                    +
+                  </button>
+                  <span className="optionCounterNumber">{options.adult}</span>
+                  <button
+                    disabled={options.adult <= 1}
+                    className="optionCounterButton"
+                    onClick={() => handleOption("adult", "d")}
+                  >
+                    -
+                  </button>
+                </div>
+              </div>
+              <div className="optionItem">
+                <span className="optionText">کودک</span>
+                <div className="optionCounter">
+                  <button
+                    className="optionCounterButton"
+                    onClick={() => handleOption("children", "i")}
+                  >
+                    +
+                  </button>
+                  <span className="optionCounterNumber">
+                    {options.children}
+                  </span>
+                  <button
+                    disabled={options.children <= 0}
+                    className="optionCounterButton"
+                    onClick={() => handleOption("children", "d")}
+                  >
+                    -
+                  </button>
+                </div>
+              </div>
+              <div className="optionItem">
+                <span className="optionText">اتاق</span>
+                <div className="optionCounter">
+                  <button
+                    className="optionCounterButton"
+                    onClick={() => handleOption("room", "i")}
+                  >
+                    +
+                  </button>
+                  <span className="optionCounterNumber">{options.room}</span>
+                  <button
+                    disabled={options.room <= 1}
+                    className="optionCounterButton"
+                    onClick={() => handleOption("room", "d")}
+                  >
+                    -
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <AiFillCloseCircle
+              className="closeBtn"
+              onClick={() => setOpenOptions(false)}
+            />
+          </div>
+        )}
+
         <div className="headerWrapper"></div>
         <div className="headerList">
           <div className="headerListItem active">
             <FontAwesomeIcon icon={faBed} />
-            <span>Stays</span>
+            <span>اقامت</span>
           </div>
           <div className="headerListItem">
             <FontAwesomeIcon icon={faPlane} />
-            <span>Stays</span>
+            <span>اقامت</span>
           </div>
           <div className="headerListItem">
             <FontAwesomeIcon icon={faCar} />
-            <span>Stays</span>
+            <span>اقامت</span>
           </div>
           <div className="headerListItem">
             <FontAwesomeIcon icon={faBed} />
-            <span>Stays</span>
+            <span>اقامت</span>
           </div>
           <div className="headerListItem">
             <FontAwesomeIcon icon={faTaxi} />
-            <span>Stays</span>
+            <span>اقامت</span>
           </div>
         </div>
         {type !== "list" && (
           <>
-            <h1 className="headerTitle">
-              A lifetime of discounts? It's Genius.
-            </h1>
+            <h1 className="headerTitle">با یه تخفیف مادام العمر چی؟</h1>
             <p className="headerDesc">
-              Get rewarded for your travels - unlock instant savings of 10% or
-              more with a free Lamabooking account
+              با هر سفر جایزه دریافت کنید - با افتتاح اکانت در رزروفا، ۱۰ %
+              تخفیف مادام العمر دریافت کنید
             </p>
-            <button className="headerBtn smHide">Sign in /Register</button>
+            <button className="headerBtn smHide">ورود | ثبت نام</button>
             <div className="headerSearch">
               <div className="headerSearchItem">
                 <FontAwesomeIcon icon={faBed} className="headerIcon" />
@@ -98,107 +186,26 @@ const Header = ({ type }) => {
               <div className="headerSearchItem">
                 <FontAwesomeIcon icon={faCalendarDays} className="headerIcon" />
                 <span
-                  onClick={() => setOpenDate((prev) => !prev)}
+                  onClick={() => {
+                    setOpenDate((prev) => !prev);
+                    setOpenOptions(false);
+                  }}
                   className="headerSearchText"
                 >{`${format(date[0].startDate, "MM/dd/yyyy")} تا ${format(
                   date[0].endDate,
                   "MM/dd/yyyy"
                 )} `}</span>
-
-                {openDate && (
-                  <div className="dateRangeContainer">
-                    <DateRange
-                      editableDateInputs={true}
-                      onChange={(item) => setDate([item.selection])}
-                      moveRangeOnFirstSelection={false}
-                      ranges={date}
-                      className="date"
-                      minDate={new Date()}
-                    />
-                    <AiFillCloseCircle
-                      className="closeBtn"
-                      onClick={() => setOpenDate(false)}
-                    />
-                  </div>
-                )}
               </div>
+
               <div className="headerSearchItem">
                 <FontAwesomeIcon icon={faPerson} className="headerIcon" />
                 <span
-                  onClick={() => setOpenOptions((prev) => !prev)}
+                  onClick={() => {
+                    setOpenOptions((prev) => !prev);
+                    setOpenDate(false);
+                  }}
                   className="headerSearchText"
                 >{`${options.adult} بزرگسال . ${options.children} کودک . ${options.room} اتاق`}</span>
-                {openOptions && (
-                  <div className="options">
-                    <div className="optionItem">
-                      <span className="optionText">بزرگسال</span>
-                      <div className="optionCounter">
-                        <button
-                          className="optionCounterButton"
-                          onClick={() => handleOption("adult", "i")}
-                        >
-                          +
-                        </button>
-                        <span className="optionCounterNumber">
-                          {options.adult}
-                        </span>
-                        <button
-                          disabled={options.adult <= 1}
-                          className="optionCounterButton"
-                          onClick={() => handleOption("adult", "d")}
-                        >
-                          -
-                        </button>
-                      </div>
-                    </div>
-                    <div className="optionItem">
-                      <span className="optionText">کودک</span>
-                      <div className="optionCounter">
-                        <button
-                          className="optionCounterButton"
-                          onClick={() => handleOption("children", "i")}
-                        >
-                          +
-                        </button>
-                        <span className="optionCounterNumber">
-                          {options.children}
-                        </span>
-                        <button
-                          disabled={options.children <= 0}
-                          className="optionCounterButton"
-                          onClick={() => handleOption("children", "d")}
-                        >
-                          -
-                        </button>
-                      </div>
-                    </div>
-                    <div className="optionItem">
-                      <span className="optionText">اتاق</span>
-                      <div className="optionCounter">
-                        <button
-                          className="optionCounterButton"
-                          onClick={() => handleOption("room", "i")}
-                        >
-                          +
-                        </button>
-                        <span className="optionCounterNumber">
-                          {options.room}
-                        </span>
-                        <button
-                          disabled={options.room <= 1}
-                          className="optionCounterButton"
-                          onClick={() => handleOption("room", "d")}
-                        >
-                          -
-                        </button>
-                      </div>
-                    </div>
-                    <AiFillCloseCircle
-                      className="closeBtn"
-                      onClick={() => setOpenOptions(false)}
-                    />
-                  </div>
-                )}
               </div>
               <div className="headerSearchItem smSearchBtnItem">
                 <button className="headerBtn" onClick={handleSearch}>

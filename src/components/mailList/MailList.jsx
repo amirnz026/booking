@@ -3,13 +3,13 @@ import "./mailList.css";
 const MailList = () => {
   return (
     <div className="mail">
-      <h1 className="mailTitle">Save time, save money!</h1>
+      <h1 className="mailTitle">در وقت و هزینه خود صرفه جویی کنید!</h1>
       <span className="mailDesc">
-        Sign up and we'll send the best deals to you
+        همین الان ثبت نام کنید تا از آخرین اخبار با خبر باشید
       </span>
       <div className="mailInputContainer">
-        <input type="text" placeholder="Your Email" />
-        <button>Subscribe</button>
+        <input type="text" placeholder="ایمیل خود را وارد کنید" />
+        <button>ثبت نام</button>
       </div>
     </div>
   );
